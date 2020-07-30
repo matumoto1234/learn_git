@@ -54,6 +54,7 @@ func todoHandler(w http.ResponseWriter, r *http.Request){
 		list = append(list, string(b))
 
 	case "DELETE":
+		/*todo listを消去*/
 		fmt.Fprint(w,"DELETE hello!\n")
 		b, err:=ioutil.ReadAll(r.Body)
 		if err!=nil{
@@ -68,7 +69,6 @@ func todoHandler(w http.ResponseWriter, r *http.Request){
 			}
 			i++
 		}
-		/*todo listを消去*/
 
 	default:
 		fmt.Fprint(w, "Method not allowed.\n")
